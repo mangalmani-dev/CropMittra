@@ -4,6 +4,9 @@ import cookieParser from "cookie-parser"
 dotenv.config()
 import { connectDB } from "./libs/db.js"
 import authRoutes from "./routes/auth.route.js"
+import cropsRoutes from "./routes/crops.route.js"
+import orderRoutes from "./routes/orders.route.js"
+import analyticsRoutes from "./routes/analytics.route.js"
 
 const app=express()
 
@@ -21,6 +24,9 @@ app.use(express.urlencoded({extended:true}))
 // how here we will set or end pioint
 
 app.use("/api/auth",authRoutes)
+app.use("/api/crops",cropsRoutes)
+app.use("/api/orders/",orderRoutes)
+app.use("/api/analytics", analyticsRoutes);
 
 
 connectDB()
