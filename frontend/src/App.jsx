@@ -1,14 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DashboardNavbar from './components/Navbar';
+import Crops from './pages/Crops';
 import { Toaster } from 'react-hot-toast';
 import LandingPage from './pages/LandingPage';
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
+import Home from './pages/Home';
 import './App.css'; 
 
 function App() {
   return (
     <Router>
+           <DashboardNavbar /> 
       <Toaster 
         position="top-center"  // default is top-right
         toastOptions={{
@@ -22,6 +26,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path='/home' element={<Home/>}/>
+        <Route path="/crops" element={<Crops />} />
+    
       </Routes>
     </Router>
   );

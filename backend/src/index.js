@@ -1,6 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
+import cors from "cors"
 dotenv.config()
 import { connectDB } from "./libs/db.js"
 import authRoutes from "./routes/auth.route.js"
@@ -20,6 +21,12 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(express.urlencoded({extended:true})) 
+ 
+// connecting to cors
+app.use(cors({
+  origin: "http://localhost:5173", // your Vite frontend
+  credentials: true, // allow cookies/tokens
+}));
 
 // how here we will set or end pioint
 
