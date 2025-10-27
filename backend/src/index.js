@@ -38,7 +38,5 @@ app.use("/api/analytics", analyticsRoutes);
 
 connectDB()
 app.listen(port ,()=>{
-    console.log(`server is running on ${port}`)
-    console.log("hello jee");
-    
+    console.log(`server is running on ${port}`)    
 })
